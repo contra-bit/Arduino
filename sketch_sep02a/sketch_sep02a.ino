@@ -4,22 +4,24 @@
 
 
 int led[7] = {7, 8, 9, 10, 11, 12, 13}; // Assign the pins for the leds
-int leftChannel = 0;  // left channel input
+int leftChannel = A0;  // left channel input
 int left, i;
 
 void setup()
 {
 for (i = 0; i < 7; i++)  // Tell the arduino that the leds are digital outputs
   pinMode(led[i], OUTPUT);
-// Serial.begin(9600); // Uncomment to enable troubleshooting over serial.
+Serial.begin(9600); // Uncomment to enable troubleshooting over serial.
 }
 
 void loop()
 {
 left = analogRead(leftChannel);  // read the left channel
-Serial.println(left);  // uncomment to check the raw input.
-// left = left / 50;    // adjusts the sensitivity  
-// Serial.println(left);  // uncomment to check the modified input.
+//Serial.println(left);  // uncomment to check the raw input.
+left = left / 8;    // adjusts the sensitivity  
+Serial.println(left);
+// delay(1);
+// uncomment to check the modified input.
 // left = 1500;  // uncomment to test all leds light.
 // left = 0;    // uncomment to check the leds are not lit when the input is 0.
 
