@@ -1,6 +1,6 @@
 int trigger = 7;
 int echo = 6;
-int LED = 13
+int LED = 13;
 long dauer = 0;
 long entfernung = 0;
 
@@ -33,7 +33,7 @@ void loop()
   }
   if (entfernung <= 40)
   {
-    digitalwrite(led, HIGH);
+    digitalwrite(LED, HIGH);
     delay(entfernung*3);
     digitalWrite(LED, LOW);
     delay(entfernung*3);
