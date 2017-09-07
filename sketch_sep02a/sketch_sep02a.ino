@@ -27,7 +27,7 @@ Serial.println(left);
 
   if (left == 0)  // if the volume is 0 then turn off all leds
    {
-   for(i = 0; i < 10; i++)
+   for(i = 0; i < 7; i++)
      {
      digitalWrite(led[i], LOW);
      }
